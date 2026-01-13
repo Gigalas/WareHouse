@@ -9,7 +9,7 @@ CREATE TABLE products (
     min_quantity INT NOT NULL DEFAULT 0,
     active BOOLEAN NOT NULL DEFAULT TRUE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NULL,
     FOREIGN KEY (category_id) REFERENCES categories(id),
     FOREIGN KEY (supplier_id) REFERENCES suppliers(id)
 );
