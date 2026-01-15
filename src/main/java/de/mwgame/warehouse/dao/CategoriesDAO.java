@@ -1,6 +1,6 @@
 package de.mwgame.warehouse.dao;
 
-import de.mwgame.warehouse.model.Categories;
+import de.mwgame.warehouse.model.Categorie;
 import de.mwgame.warehouse.util.db.DataBaseFactory;
 
 import java.sql.*;
@@ -10,21 +10,22 @@ import java.util.List;
 
 public class CategoriesDAO
 {
+    private static final String SELECT_CATEGORIES_SQL_QUERY = "SELECT * FROM categories ORDER BY name";
+
     private static final CategoriesDAO INSTANCE = new CategoriesDAO();
 
     public static CategoriesDAO getInstance() {
         return INSTANCE;
     }
 
-    public List<Categories> findAll() {
-        List<Categories> categories = new ArrayList<>();
-        String sql = "SELECT * FROM categories ORDER BY name";
+    public List<Categorie> findAll() {
+        List<Categorie> categories = new ArrayList<>();
 
         Connection conn = null;
         try {
             conn = DataBaseFactory.getInstance().getConnection();
             Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
+            ResultSet rs = stmt.executeQuery(SELECT_CATEGORIES_SQL_QUERY);
 
             while (rs.next()) {
 
@@ -44,7 +45,7 @@ public class CategoriesDAO
         return categories;
     }
 
-    private Categories mapResultSetToCategory(ResultSet rs) throws SQLException {
+    private Categorie mapResultSetToCategory(ResultSet rs) throws SQLException {
         Long id = rs.getLong("id");
         String name = rs.getString("name");
         String description = rs.getString("description");
@@ -52,6 +53,6 @@ public class CategoriesDAO
         Timestamp timestamp = rs.getTimestamp("created_at");
         LocalDateTime createdAt = timestamp != null ? timestamp.toLocalDateTime() : null;
 
-        return new Categories(id, name, description, createdAt);
+        return new Categorie(id, name, description, createdAt);
     }
 }

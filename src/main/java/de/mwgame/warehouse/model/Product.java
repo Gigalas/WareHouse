@@ -5,10 +5,11 @@ import de.mwgame.warehouse.model.enums.ProductStatus;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-public class Products
+public class Product
 {
     private Long id;
     private String sku;
+    private String name;
     private Long categoryId;
     private Long supplierId;
     private BigDecimal price;
@@ -18,10 +19,11 @@ public class Products
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
-    public Products(Long id, String sku, Long categoryId, Long supplierId, BigDecimal price, Integer quantity, Integer minQuantity, ProductStatus active, LocalDateTime createdAt, LocalDateTime updatedAt)
+    public Product(Long id, String sku, String name, Long categoryId, Long supplierId, BigDecimal price, Integer quantity, Integer minQuantity, ProductStatus active, LocalDateTime createdAt, LocalDateTime updatedAt)
     {
         this.id = id;
         this.sku = sku;
+        this.name = name;
         this.categoryId = categoryId;
         this.supplierId = supplierId;
         this.price = price;
@@ -46,6 +48,14 @@ public class Products
 
     public void setSku(String sku) {
         this.sku = sku;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Long getCategoryId() {

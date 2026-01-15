@@ -1,17 +1,15 @@
 package de.mwgame.warehouse.model;
 
-import de.mwgame.warehouse.model.enums.MovementType;
-
 import java.time.LocalDateTime;
 
-public class Categories
+public class Categorie
 {
     private Long id;
     private String name;
     private String description;
     private LocalDateTime createdAt;
 
-    public Categories(Long id, String name, String description, LocalDateTime createdAt)
+    public Categorie(Long id, String name, String description, LocalDateTime createdAt)
     {
         this.id = id;
         this.name = name;

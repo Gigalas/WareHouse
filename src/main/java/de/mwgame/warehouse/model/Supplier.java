@@ -1,18 +1,22 @@
 package de.mwgame.warehouse.model;
 
-public class Suppliers
+import java.time.LocalDateTime;
+
+public class Supplier
 {
     private Long id;
     private String name;
     private String email;
     private String phone;
+    private LocalDateTime createdAt;
 
-    public Suppliers(Long id, String name, String email, String phone)
+    public Supplier(Long id, String name, String email, String phone, LocalDateTime createdAt)
     {
         this.id = id;
         this.name = name;
         this.email = email;
         this.phone = phone;
+        this.createdAt = createdAt;
     }
 
     public Long getId(){
@@ -45,5 +49,13 @@ public class Suppliers
 
     public void setPhone(String phone){
         this.phone = phone;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 }

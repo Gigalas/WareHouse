@@ -19,7 +19,6 @@ public class DataBaseFactory
 
         try {
             Class.forName(DatabaseConfig.getInstance().getDriver());
-            System.out.println("✓ MySQL Driver loaded");
         } catch (ClassNotFoundException e) {
             throw new RuntimeException("MySQL Driver not found", e);
         }

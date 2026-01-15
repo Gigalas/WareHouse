@@ -22,9 +22,9 @@ INSERT INTO suppliers (name, email, phone) VALUES
 INSERT INTO products (
     sku, name, category_id, supplier_id, price, quantity, min_quantity, active
 ) VALUES
-('SSD-1TB', 'SSD Drive 1TB', 1, 1, 99.99, 50, 10, TRUE),
-('OFFICE-CHAIR', 'Office Chair', 2, 2, 149.90, 20, 5, TRUE),
-('COFFEE-1KG', 'Coffee Beans 1kg', 3, 3, 12.50, 100, 20, TRUE);
+('SSD-1TB', 'SSD Drive 1TB', 1, 1, 99.99, 45, 10, 'ACTIVE'),
+('OFFICE-CHAIR', 'Office Chair', 2, 2, 149.90, 20, 5, 'ACTIVE'),
+('COFFEE-1KG', 'Coffee Beans 1kg', 3, 3, 12.50, 100, 20, 'ARCHIVED');
 
 -- ===============================
 -- Stock Movements

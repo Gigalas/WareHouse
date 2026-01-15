@@ -4,7 +4,7 @@ import de.mwgame.warehouse.model.enums.MovementType;
 
 import java.time.LocalDateTime;
 
-public class StockMovements
+public class StockMovement
 {
     private Long id;
     private Long productId;
@@ -13,7 +13,7 @@ public class StockMovements
     private String reference;
     private LocalDateTime createdAt;
 
-    public StockMovements(Long id, Long productId, MovementType type, Integer quantity, String reference, LocalDateTime createdAt)
+    public StockMovement(Long id, Long productId, MovementType type, Integer quantity, String reference, LocalDateTime createdAt)
     {
         this.id = id;
         this.productId = productId;
