@@ -34,6 +34,21 @@ public class Product
         this.updatedAt = updatedAt;
     }
 
+    public Product(String sku, String name, Long categoryId, Long supplierId, BigDecimal price, Integer minQuantity)
+    {
+        this.id = null;
+        this.sku = sku;
+        this.name = name;
+        this.categoryId = categoryId;
+        this.supplierId = supplierId;
+        this.price = price;
+        this.quantity = 0;
+        this.minQuantity = minQuantity;
+        this.active = ProductStatus.ACTIVE;
+        this.createdAt = null;
+        this.updatedAt = null;
+    }
+
     public Long getId() {
         return id;
     }

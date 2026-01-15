@@ -11,6 +11,7 @@ import java.util.List;
 public class CategoriesDAO
 {
     private static final String SELECT_CATEGORIES_SQL_QUERY = "SELECT * FROM categories ORDER BY name";
+    private static final String SELECT_CATEGORIES_EXISTS_BY_ID = "SELECT * FROM categories WHERE id = ?";
 
     private static final CategoriesDAO INSTANCE = new CategoriesDAO();
 
@@ -43,6 +44,28 @@ public class CategoriesDAO
         }
 
         return categories;
+    }
+
+    public boolean existsById(long categoryId){
+        Connection conn = null;
+        try {
+            conn = DataBaseFactory.getInstance().getConnection();
+
+            try (PreparedStatement ps = conn.prepareStatement(SELECT_CATEGORIES_EXISTS_BY_ID)) {
+                ps.setLong(1, categoryId);
+
+                try (ResultSet rs = ps.executeQuery()) {
+                    return rs.next();
+                }
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException("Failed to check SKU existence", e);
+        } finally {
+            if (conn != null) {
+                DataBaseFactory.getInstance().releaseConnection(conn);
+            }
+        }
     }
 
     private Categorie mapResultSetToCategory(ResultSet rs) throws SQLException {

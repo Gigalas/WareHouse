@@ -7,7 +7,7 @@ CREATE TABLE products (
     price DECIMAL(10,2) NOT NULL,
     quantity INT NOT NULL DEFAULT 0,
     min_quantity INT NOT NULL DEFAULT 0,
-    active ENUM('ACTIVE', 'DISABLED', 'ARCHIVED') NOT NULL,
+    active ENUM('ACTIVE', 'DISABLED', 'ARCHIVED') NOT NULL DEFAULT 'ACTIVE',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP NULL,
     FOREIGN KEY (category_id) REFERENCES categories(id),
