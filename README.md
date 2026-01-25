@@ -6,7 +6,7 @@ Dieses Projekt ist ein Open-Source-Projekt und zeigt grundlegende Konzepte der S
 ---
 
 ## 🛠 Technologien
-- Java 21
+- Java 25
 - MySQL
 - JDBC
 - Maven

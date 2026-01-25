@@ -1,4 +1,4 @@
-package de.mwgame.warehouse.app;
+package de.mwgame.warehouse;
 
 import de.mwgame.warehouse.dao.CategoriesDAO;
 import de.mwgame.warehouse.dao.ProductsDAO;
